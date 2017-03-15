@@ -29,8 +29,11 @@ ENV LIBRARY_PATH /lib/arm-linux-gnueabihf
 WORKDIR /go/src/github.com/resin-io/edge-node-manager
 RUN go get github.com/Masterminds/glide
 COPY . ./
-RUN glide install
+# RUN glide install
 RUN find / -name 'libudev.so.1'
-# RUN CC=arm-linux-gnueabihf-gcc CXX=arm-linux-gnueabihf=g++ LD=arm-linux-gnueabihf-ld GOOS=linux GOARCH=arm GOARM=7 CGO_ENABLED=1 go build -v --ldflags '-Wl,-rpath,/lib/arm-linux-gnueabihf,-L/lib/arm-linux-gnueabihf -ludev'
-RUN CC=arm-linux-gnueabihf-gcc CXX=arm-linux-gnueabihf=g++ LD=arm-linux-gnueabihf-ld GOOS=linux GOARCH=arm GOARM=7 CGO_ENABLED=1 go build -v --ldflags '-Wl,-rpath,/lib/arm-linux-gnueabihf,-L,/lib/arm-linux-gnueabihf, -ludev'
+RUN file /lib/arm-linux-gnueabihf/libudev.so.1.5.0
+# RUN CC=arm-linux-gnueabihf-gcc CXX=arm-linux-gnueabihf-g++ CC_FOR_TARGET=arm-linux-gnueabihf-gcc CXX_FOR_TARGET=arm-linux-gnueabihf-g++ LD=arm-linux-gnueabihf-ld GOOS=linux GOARCH=arm GOARM=7 CGO_ENABLED=1 go build -v -ldflags '--rpath /lib/arm-linux-gnueabihf'
+# WORKDIR /go/src/github.com/resin-io/edge-node-manager/vendor/github.com/kylelemons/gousb/lsusb
+RUN CC=arm-linux-gnueabihf-gcc GOOS=linux GOARCH=arm GOARM=7 CGO_ENABLED=1 go build -x -ldflags '--rpath /lib/arm-linux-gnueabihf'
+
 #  # /lib/arm-linux-gnueabihf/libudev.so.1
