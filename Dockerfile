@@ -1,6 +1,6 @@
 # Debian base-image for the Raspberry Pi 3
 # See more about resin base images here: http://docs.resin.io/runtime/resin-base-images/
-FROM resin/raspberrypi3-golang:latest
+FROM resin/raspberrypi3-golang
 
 # Disable systemd init system
 ENV INITSYSTEM off
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     bluez \
     bluez-firmware \
     curl \
-    jq z
+    jq \
     libusb-1.0-0-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
