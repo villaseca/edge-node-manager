@@ -6,7 +6,7 @@ FROM resin/raspberrypi3-golang
 # ENV INITSYSTEM off
 
 # Use apt-get if you need to get dependencies,
-RUN apt-get update && apt-get install -yq --no-get-recommends \
+RUN apt-get update && apt-get install -yq --no-install-recommends \
     # bluez \
     # bluez-firmware \
     # curl \
