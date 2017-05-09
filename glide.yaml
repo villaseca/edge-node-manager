@@ -17,7 +17,7 @@ import:
 #   version: ^0.2.14
 - package: github.com/pkg/errors
   version: ^0.8.0
-# - package: github.com/verybluebot/tarinator-go
+- package: github.com/verybluebot/tarinator-go
 # - package: golang.org/x/net
 #   subpackages:
 #   - context
