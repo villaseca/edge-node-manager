@@ -14,6 +14,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     libusb-1.0-0-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
+ENV GOMAXPROCS 1
+
 RUN go get github.com/Masterminds/glide
 WORKDIR /go/src/github.com/resin-io/edge-node-manager
 COPY . ./
