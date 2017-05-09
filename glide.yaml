@@ -18,9 +18,9 @@ import:
 - package: github.com/pkg/errors
   version: ^0.8.0
 - package: github.com/verybluebot/tarinator-go
-# - package: golang.org/x/net
-#   subpackages:
-#   - context
+- package: golang.org/x/net
+  subpackages:
+  - context
 # - package: github.com/fredli74/lockfile
 # - package: github.com/kylelemons/gousb
 #   subpackages:
