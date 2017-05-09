@@ -19,7 +19,7 @@ ENV GOMAXPROCS 1
 RUN go get github.com/Masterminds/glide
 WORKDIR /go/src/github.com/resin-io/edge-node-manager
 COPY . ./
-RUN glide install --debug
+RUN glide --debug install
 # RUN go build
 
 # start.sh will run when container starts up on the device
