@@ -17,9 +17,9 @@ FROM resin/raspberrypi3-golang
 ENV GOMAXPROCS 1
 
 RUN go get github.com/Masterminds/glide
-# WORKDIR /go/src/github.com/resin-io/edge-node-manager
-# COPY . ./
-# RUN glide install
+WORKDIR /go/src/github.com/resin-io/edge-node-manager
+COPY . ./
+RUN glide install
 # RUN go build
 
 # start.sh will run when container starts up on the device
