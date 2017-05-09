@@ -4,7 +4,7 @@ import:
   version: ^0.11.2
 - package: github.com/boltdb/bolt
   version: ^1.3.0
-# - package: github.com/cavaliercoder/grab
+- package: github.com/cavaliercoder/grab
 # - package: github.com/currantlabs/ble
 #   subpackages:
 #   - linux
