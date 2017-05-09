@@ -6,15 +6,15 @@ FROM resin/raspberrypi3-golang
 # ENV INITSYSTEM off
 
 # Use apt-get if you need to get dependencies,
-# RUN apt-get update && apt-get get -yq --no-get-recommends \
-#     bluez \
-#     bluez-firmware \
-#     curl \
-#     jq \
-#     libusb-1.0-0-dev && \
-#     apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -yq --no-get-recommends \
+    # bluez \
+    # bluez-firmware \
+    # curl \
+    # jq \
+    libusb-1.0-0-dev && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ENV GOMAXPROCS 1
+# ENV GOMAXPROCS 1
 
 RUN go get github.com/Sirupsen/logrus
 RUN go get github.com/boltdb/bolt
