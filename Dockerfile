@@ -19,13 +19,14 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 RUN go get github.com/Sirupsen/logrus
 RUN go get github.com/boltdb/bolt
 RUN go get github.com/cavaliercoder/grab
-RUN go get github.com/currantlabs/ble
+RUN go get github.com/currantlabs/ble/linux
+RUN go get github.com/currantlabs/ble/linux/hci
 RUN go get github.com/gorilla/mux
 RUN go get github.com/mholt/archiver
 RUN go get github.com/parnurzeal/gorequest
 RUN go get github.com/pkg/errors
 RUN go get github.com/verybluebot/tarinator-go
-# RUN go get golang.org/x/net
+RUN go get golang.org/x/net/context
 RUN go get github.com/fredli74/lockfile
 RUN go get github.com/kylelemons/gousb/usb
 
