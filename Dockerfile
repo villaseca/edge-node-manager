@@ -18,7 +18,7 @@ ENV GOMAXPROCS 1
 
 RUN go get github.com/Masterminds/glide
 WORKDIR /go/src/github.com/resin-io/edge-node-manager
-COPY . ./
+COPY glide.yaml ./glide.yaml
 RUN glide --debug install
 # RUN go build
 
