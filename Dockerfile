@@ -25,7 +25,7 @@ RUN go get github.com/mholt/archiver
 RUN go get github.com/parnurzeal/gorequest
 RUN go get github.com/pkg/errors
 RUN go get github.com/verybluebot/tarinator-go
-RUN go get golang.org/x/net
+# RUN go get golang.org/x/net
 RUN go get github.com/fredli74/lockfile
 RUN go get github.com/kylelemons/gousb
 
