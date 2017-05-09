@@ -13,15 +13,15 @@ import:
   version: ^1.3.0
 - package: github.com/mholt/archiver
   version: ^2.0.0
-- package: github.com/parnurzeal/gorequest
-  version: ^0.2.14
-- package: github.com/pkg/errors
-  version: ^0.8.0
-- package: github.com/verybluebot/tarinator-go
-- package: golang.org/x/net
-  subpackages:
-  - context
-- package: github.com/fredli74/lockfile
-- package: github.com/kylelemons/gousb
-  subpackages:
-  - usb
+# - package: github.com/parnurzeal/gorequest
+#   version: ^0.2.14
+# - package: github.com/pkg/errors
+#   version: ^0.8.0
+# - package: github.com/verybluebot/tarinator-go
+# - package: golang.org/x/net
+#   subpackages:
+#   - context
+# - package: github.com/fredli74/lockfile
+# - package: github.com/kylelemons/gousb
+#   subpackages:
+#   - usb
