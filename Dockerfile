@@ -30,7 +30,7 @@ RUN go get github.com/fredli74/lockfile
 # RUN go get github.com/kylelemons/gousb
 
 # RUN go get github.com/Masterminds/glide
-# WORKDIR /go/src/github.com/resin-io/edge-node-manager
+WORKDIR /go/src/github.com/resin-io/edge-node-manager
 COPY . ./
 # RUN glide --debug get
 RUN go build
