@@ -5,8 +5,8 @@ FROM resin/raspberrypi3-golang
 # Disable systemd init system
 # ENV INITSYSTEM off
 
-# Use apt-get if you need to install dependencies,
-# RUN apt-get update && apt-get install -yq --no-install-recommends \
+# Use apt-get if you need to get dependencies,
+# RUN apt-get update && apt-get get -yq --no-get-recommends \
 #     bluez \
 #     bluez-firmware \
 #     curl \
@@ -16,23 +16,23 @@ FROM resin/raspberrypi3-golang
 
 ENV GOMAXPROCS 1
 
-RUN go install github.com/Sirupsen/logrus
-RUN go install github.com/boltdb/bolt
-RUN go install github.com/cavaliercoder/grab
-RUN go install github.com/currantlabs/ble
-RUN go install github.com/gorilla/mux
-RUN go install github.com/mholt/archiver
-RUN go install github.com/parnurzeal/gorequest
-RUN go install github.com/pkg/errors
-RUN go install github.com/verybluebot/tarinator-go
-RUN go install golang.org/x/net
-RUN go install github.com/fredli74/lockfile
-RUN go install github.com/kylelemons/gousb
+RUN go get github.com/Sirupsen/logrus
+RUN go get github.com/boltdb/bolt
+RUN go get github.com/cavaliercoder/grab
+RUN go get github.com/currantlabs/ble
+RUN go get github.com/gorilla/mux
+RUN go get github.com/mholt/archiver
+RUN go get github.com/parnurzeal/gorequest
+RUN go get github.com/pkg/errors
+RUN go get github.com/verybluebot/tarinator-go
+RUN go get golang.org/x/net
+RUN go get github.com/fredli74/lockfile
+RUN go get github.com/kylelemons/gousb
 
 # RUN go get github.com/Masterminds/glide
 # WORKDIR /go/src/github.com/resin-io/edge-node-manager
 COPY . ./
-# RUN glide --debug install
+# RUN glide --debug get
 RUN go build
 
 # start.sh will run when container starts up on the device
